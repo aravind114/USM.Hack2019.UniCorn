@@ -1,0 +1,73 @@
+<div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a mat-flat-button color="primary" [routerLink]="['/usm-events']"><mat-icon>list</mat-icon></a>
+  </div>
+
+<h3>Create Form</h3>
+  <mat-horizontal-stepper #stepper formArrayName="formArray">
+  <mat-step [formGroupName="0" [stepControl]="formArray?.get([0])">
+      <ng-template matStepLabel>Fill out category details</ng-template>
+          
+      <mat-form-field>
+        <mat-label>Category</mat-label>
+        <input matInput formControlName="category" required>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+
+            <mat-form-field>
+        <mat-label>Event Type</mat-label>
+        <input matInput formControlName="event_type" required>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+
+            <mat-form-field>
+        <mat-label>Alert Type</mat-label>
+        <input matInput formControlName="alert_type" required>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>  
+  </mat-step>
+  <mat-step formGroupName="1" [stepControl]="formArray?.get([1])">   
+      <ng-template matStepLabel>Fill out correspondace</ng-template>
+
+        <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="corr_email_text" required>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Event Type</mat-label>
+        <input matInput formControlName="corr_sms_text" required>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+
+            <mat-form-field>
+        <mat-label>Event Type</mat-label>
+        <input matInput formControlName="corr_twitter_text" required>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    
+  </mat-step>
+  <mat-step>
+        <ng-template matStepLabel>Confirm your information</ng-template>
+      Everything seems correct. Please verfiy
+      <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button>Done</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+</div>

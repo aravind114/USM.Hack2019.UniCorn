@@ -13,6 +13,7 @@ import {
   MatIconModule,
   MatButtonModule,
   MatCardModule,
+  MatStepperModule,
   MatFormFieldModule } from "@angular/material";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
@@ -50,6 +51,7 @@ import { UsmEventDetailComponent } from './usm-event-detail/usm-event-detail.com
     MatIconModule,
     MatButtonModule,
     MatCardModule,
+    MatStepperModule,
     MatFormFieldModule
   ],
   providers: [],

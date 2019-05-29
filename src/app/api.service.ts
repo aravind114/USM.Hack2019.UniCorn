@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
+import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
 import { Product } from './product';
 import { Event } from './event';
 
@@ -26,6 +27,10 @@ export class ApiService {
 
   getEvents(): Observable<Event[]> {
     return of(this.usmevents);
+  }
+
+  addEvent(event): Observable<Event> {
+    return of(event);
   }
 
   getProducts(): Observable<Product[]> {
@@ -79,3 +84,5 @@ export class ApiService {
     };
   }
 }
+
+
