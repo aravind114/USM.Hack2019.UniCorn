@@ -20,6 +20,7 @@ import { ProductsComponent } from './products/products.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
+import { UsmEventsComponent } from './usm-events/usm-events.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
     ProductsComponent,
     ProductDetailComponent,
     ProductAddComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    UsmEventsComponent
   ],
   imports: [
     BrowserModule,
