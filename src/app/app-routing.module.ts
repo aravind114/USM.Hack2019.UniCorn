@@ -5,6 +5,10 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 
+import { UsmEventsComponent } from './usm-events/usm-events.component';
+import { UsmEventDetailComponent } from './usm-event-detail/usm-event-detail.component';
+import { UsmEventAddComponent } from './usm-event-add/usm-event-add.component';
+
 const routes: Routes = [
   {
     path: 'products',
@@ -27,9 +31,25 @@ const routes: Routes = [
     data: { title: 'Edit Product' }
   },
   { path: '',
-    redirectTo: '/products',
+    redirectTo: '/usm-events',
     pathMatch: 'full'
+  },
+   {
+    path: 'usm-events',
+    component: UsmEventsComponent,
+    data: { title: 'List of Events' }
+  },
+  {
+    path: 'usm-event-details/:id',
+    component: UsmEventDetailComponent,
+    data: { title: 'Event Details' }
+  },
+  {
+    path: 'usm-event-add',
+    component: UsmEventAddComponent,
+    data: { title: 'Add Event' }
   }
+
 ];
 
 @NgModule({

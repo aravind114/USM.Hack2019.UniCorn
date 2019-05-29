@@ -21,6 +21,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import { UsmEventsComponent } from './usm-events/usm-events.component';
+import { UsmEventAddComponent } from './usm-event-add/usm-event-add.component';
+import { UsmEventDetailComponent } from './usm-event-detail/usm-event-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { UsmEventsComponent } from './usm-events/usm-events.component';
     ProductDetailComponent,
     ProductAddComponent,
     ProductEditComponent,
-    UsmEventsComponent
+    UsmEventsComponent,
+    UsmEventDetailComponent,
+    UsmEventAddComponent
   ],
   imports: [
     BrowserModule,

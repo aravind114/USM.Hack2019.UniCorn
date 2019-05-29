@@ -3,9 +3,10 @@ import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
 import { Product } from './product';
+import { Event } from './event';
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 const apiUrl = "http://localhost:3000/api/v1/products";
 
@@ -14,9 +15,20 @@ const apiUrl = "http://localhost:3000/api/v1/products";
 })
 export class ApiService {
 
+  //mock event data
+  usmevents: Array<Event> = [
+    { _id: '1', category: 'Insurance', event_type: 'New Application or Increase in Existing Insurance', alert_type: 'Real Time', correspondance: 'Email & SMS' },
+    { _id: '2', category: 'Investment Switch - Super', event_type: 'Application Acknowledgement', alert_type: 'Real Time', correspondance: 'Email & SMS' },
+    { _id: '3', category: 'Binding Nomination Renewal - Pension', event_type: 'Renewal - Notification', alert_type: 'Time-Based', correspondance: 'SMS' }
+  ];
+
   constructor(private http: HttpClient) { }
 
-  getProducts (): Observable<Product[]> {
+  getEvents(): Observable<Event[]> {
+    return of(this.usmevents);
+  }
+
+  getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(apiUrl)
       .pipe(
         tap(products => console.log('Fetch products')),
@@ -32,14 +44,14 @@ export class ApiService {
     );
   }
 
-  addProduct (product): Observable<Product> {
+  addProduct(product): Observable<Product> {
     return this.http.post<Product>(apiUrl, product, httpOptions).pipe(
       tap((product: Product) => console.log(`added product w/ id=${product._id}`)),
       catchError(this.handleError<Product>('addProduct'))
     );
   }
 
-  updateProduct (id, product): Observable<any> {
+  updateProduct(id, product): Observable<any> {
     const url = `${apiUrl}/${id}`;
     return this.http.put(url, product, httpOptions).pipe(
       tap(_ => console.log(`updated product id=${id}`)),
@@ -47,7 +59,7 @@ export class ApiService {
     );
   }
 
-  deleteProduct (id): Observable<Product> {
+  deleteProduct(id): Observable<Product> {
     const url = `${apiUrl}/${id}`;
 
     return this.http.delete<Product>(url, httpOptions).pipe(
@@ -56,7 +68,7 @@ export class ApiService {
     );
   }
 
-  private handleError<T> (operation = 'operation', result?: T) {
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
