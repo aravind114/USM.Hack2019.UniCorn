@@ -6,8 +6,6 @@
   <div class="button-row">
     <a mat-flat-button color="primary" [routerLink]="['/usm-events']"><mat-icon>list</mat-icon></a>
   </div>
-
-<h3>Create Form</h3>
 <form [formGroup]="eventForm">
   <mat-horizontal-stepper #stepper formArrayName="formArray">
   <mat-step formGroupName="0" [stepControl]="formArray?.get([0])">
