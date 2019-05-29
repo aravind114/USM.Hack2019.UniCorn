@@ -14,6 +14,7 @@ import {
   MatButtonModule,
   MatCardModule,
   MatStepperModule,
+  MatSelectModule,
   MatFormFieldModule } from "@angular/material";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
@@ -52,7 +53,8 @@ import { UsmEventDetailComponent } from './usm-event-detail/usm-event-detail.com
     MatButtonModule,
     MatCardModule,
     MatStepperModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
+
 import { FormControl,AbstractControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-usm-event-add',
@@ -11,10 +13,10 @@ import { FormControl,AbstractControl, FormGroupDirective, FormBuilder, FormGroup
 export class UsmEventAddComponent implements OnInit {
 
   eventForm: FormGroup;
+  categoryOptions: string[] = ['Protect Your Super','Insurance','Investment Switch - Super','Pension - Income Election','Binding Nomination Renewal - Super'];
+  eventOptions: string[] = ['New Application or Increase in Existing Insurance','Decrease or Cancellation','Application Decision','Application Acknowledgement','Initial Reminder - No Contribution - Month 16th Notification'];
+  alertTypeOptions: string[] = ['Real Time','Time-Based'];
 
-eventGrp: FormGroup;
-corrsGrp:FormGroup;
-scheduleGrp:FormGroup;
 
  /** Returns a FormArray with the name 'formArray'. */
   get formArray(): AbstractControl | null { return this.eventForm.get('formArray'); }
