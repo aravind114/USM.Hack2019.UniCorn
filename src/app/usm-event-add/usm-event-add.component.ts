@@ -56,9 +56,8 @@ scheduleGrp:FormGroup;
 
         }),
            this.formBuilder.group({
-      'category' : [null, Validators.required],
-      'event_type' : [null, Validators.required],
       'alert_type' : [null, Validators.required]
+
         })
 
       ])

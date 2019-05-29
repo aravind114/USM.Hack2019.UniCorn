@@ -1,19 +1,20 @@
 <div class="example-container mat-elevation-z8">
-  <div class="example-loading-shade"
-       *ngIf="isLoadingResults">
-    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
-  </div>
-  <div class="button-row">
-    <a mat-flat-button color="primary" [routerLink]="['/usm-events']"><mat-icon>list</mat-icon></a>
-  </div>
-<form [formGroup]="eventForm">
-  <mat-horizontal-stepper #stepper formArrayName="formArray">
-  <mat-step formGroupName="0" [stepControl]="formArray?.get([0])">
-      <ng-template matStepLabel>Fill out category details</ng-template>
-          
-      <mat-form-field>
-        <mat-label>Category</mat-label>
-        <input matInput formControlName="category" required>
+	<div class="example-loading-shade" *ngIf="isLoadingResults">
+		<mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+	</div>
+	<div class="button-row">
+		<a mat-flat-button color="primary" [routerLink]="['/usm-events']">
+			<mat-icon>list</mat-icon>
+		</a>
+	</div>
+	<form [formGroup]="eventForm">
+		<mat-horizontal-stepper #stepper formArrayName="formArray">
+			<mat-step formGroupName="0" [stepControl]="formArray?.get([0])">
+				<ng-template matStepLabel>Fill out category details</ng-template>
+
+				<mat-form-field>
+					<mat-label>Category</mat-label>
+					<input matInput formControlName="category" required>
         <mat-error>This field is required</mat-error>
       </mat-form-field>
 
@@ -54,9 +55,23 @@
         <mat-error>This field is required</mat-error>
       </mat-form-field>
       <div>
-     
-        <button mat-button matStepperNext>Next</button>
+
       </div>  
+        <div class="button-row" style="padding-top:50px" >
+         <button mat-flat-button color="primary" style="float:left"  matStepperPrevious> <mat-icon>arrow_left_alt</mat-icon>Back</button>
+        <button mat-flat-button color="primary" style="float:right" matStepperNext> <mat-icon>arrow_right_alt</mat-icon> Next</button>
+      </div>    
+  </mat-step>
+    <mat-step formGroupName="2" [stepControl]="formArray?.get([2])">   
+      <ng-template matStepLabel>Schedule Events</ng-template>
+
+        <mat-form-field>
+        <mat-label>Alert Type</mat-label>
+        <input matInput formControlName="alert_type" required>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>     
+
+   
         <div class="button-row" style="padding-top:50px" >
          <button mat-flat-button color="primary" style="float:left"  matStepperPrevious> <mat-icon>arrow_left_alt</mat-icon>Back</button>
         <button mat-flat-button color="primary" style="float:right" matStepperNext> <mat-icon>arrow_right_alt</mat-icon> Next</button>
