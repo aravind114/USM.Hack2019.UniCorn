@@ -17,6 +17,9 @@ import {
   MatSelectModule,
   MatGridListModule,
   MatSlideToggleModule,
+  MatRadioModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
   MatFormFieldModule } from "@angular/material";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
@@ -37,7 +40,8 @@ import { UsmEventDetailComponent } from './usm-event-detail/usm-event-detail.com
     ProductEditComponent,
     UsmEventsComponent,
     UsmEventDetailComponent,
-    UsmEventAddComponent
+    UsmEventAddComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -58,7 +62,10 @@ import { UsmEventDetailComponent } from './usm-event-detail/usm-event-detail.com
     MatFormFieldModule,
     MatSelectModule,
     MatGridListModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatRadioModule,
+  MatDatepickerModule,
+  MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

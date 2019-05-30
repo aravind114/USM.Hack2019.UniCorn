@@ -34,3 +34,7 @@
 .example-card {
 width:100%;
 }
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 10px;
+}

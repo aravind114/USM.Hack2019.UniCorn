@@ -16,6 +16,8 @@ export class UsmEventAddComponent implements OnInit {
   categoryOptions: string[] = ['Protect Your Super','Insurance','Investment Switch - Super','Pension - Income Election','Binding Nomination Renewal - Super'];
   eventOptions: string[] = ['New Application or Increase in Existing Insurance','Decrease or Cancellation','Application Decision','Application Acknowledgement','Initial Reminder - No Contribution - Month 16th Notification'];
   alertTypeOptions: string[] = ['Real Time','Time-Based'];
+  recurTypeOptions: string[] = ['One Off','Recurring'];
+  intervalTypeOptions: string[] = ['Daily','Weekly','Fortnightly','Annually'];
 
 
  /** Returns a FormArray with the name 'formArray'. */
@@ -33,6 +35,10 @@ export class UsmEventAddComponent implements OnInit {
   corr_twitter:boolean=false;
   corr_twitter_text:string='';
   isLoadingResults = false;
+  recur_type : string ='';
+  from_date:string = '';
+  to_date:string = '';
+  interval:string ='';
 
   constructor(private router: Router, private api: ApiService, private formBuilder: FormBuilder) { }
 
@@ -58,7 +64,10 @@ export class UsmEventAddComponent implements OnInit {
 
         }),
            this.formBuilder.group({
-      'alert_type' : [null]
+      'recur_type' : [null],
+      'from_date':[null],
+      'to_date':[null],
+      'interval':[null]
         })
 
       ])
