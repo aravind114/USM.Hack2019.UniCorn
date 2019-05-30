@@ -25,7 +25,7 @@ export class UsmEventAddComponent implements OnInit {
   event_type: string= '';
   alert_type:string = '';
   correspondance: string =''; 
-  corr_email:boolean= false;
+  corr_email:boolean= true;
   corr_email_text:string= '';
   corr_email_subject:string= '';
   corr_sms:boolean= false;
@@ -46,20 +46,19 @@ export class UsmEventAddComponent implements OnInit {
       'alert_type' : [null, Validators.required]
         }),
       this.formBuilder.group({
-      'corr_email' : [null, Validators.required],
-      'corr_email_subject' : [null, Validators.required],
-      'corr_email_text' : [null, Validators.required],
+      'corr_email' : true,
+      'corr_email_subject' : [null],
+      'corr_email_text' : [null],
 
-      'corr_sms' : [null, Validators.required],
-      'corr_sms_text' : [null, Validators.required],      
+      'corr_sms' : [null],
+      'corr_sms_text' : [null],      
 
-      'corr_twitter' : [null, Validators.required], 
-      'corr_twitter_text' : [null, Validators.required]
+      'corr_twitter' : [null], 
+      'corr_twitter_text' : [null]
 
         }),
            this.formBuilder.group({
-      'alert_type' : [null, Validators.required]
-
+      'alert_type' : [null]
         })
 
       ])

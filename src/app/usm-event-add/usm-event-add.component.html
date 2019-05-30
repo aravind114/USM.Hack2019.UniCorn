@@ -47,29 +47,102 @@
         <button mat-flat-button color="primary"  matStepperNext> <mat-icon>arrow_right_alt</mat-icon> Next</button>
       </div>  
   </mat-step>
+
+
   <mat-step formGroupName="1" [stepControl]="formArray?.get([1])">   
       <ng-template matStepLabel>Fill out correspondace</ng-template>
 
-        <mat-form-field>
-        <mat-label>Email</mat-label>
-        <input matInput formControlName="corr_email_text" required>
+<mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color">
+    {{tile.text}}
+  </mat-grid-tile>
+</mat-grid-list>
+<mat-card class="example-card" >
+
+  <mat-card-header>
+    <mat-card-title>Email Configurations</mat-card-title>
+   
+  </mat-card-header>
+    <mat-card-content>
+         <mat-slide-toggle 
+          class="example-fullength-width"         
+           formControlName="corr_email"
+           color="primary">   
+            <mat-label>Send Email</mat-label>                      
+      </mat-slide-toggle>
+  
+      <mat-form-field class="example-fullength-width">
+        <mat-label>Email Subject</mat-label>  
+        <textarea matInput formControlName="corr_email_subject" >
+        </textarea>
         <mat-error>This field is required</mat-error>
       </mat-form-field>
 
-      <mat-form-field>
-        <mat-label>Event Type</mat-label>
-        <input matInput formControlName="corr_sms_text" required>
+       <mat-form-field class="example-fullength-width">
+        <mat-label>Email Text</mat-label>  
+        <textarea matInput formControlName="corr_email_text" >
+        </textarea>
         <mat-error>This field is required</mat-error>
       </mat-form-field>
+        </mat-card-content> 
 
-       <mat-form-field>
-        <mat-label>Event Type</mat-label>
-        <input matInput formControlName="corr_twitter_text" required>
+</mat-card>
+
+
+<mat-card class="example-card">
+
+  <mat-card-header>
+    <mat-card-title>SMS Configurations</mat-card-title>
+   
+  </mat-card-header>
+    <mat-card-content>
+         <mat-slide-toggle 
+          class="example-fullength-width"         
+           formControlName="corr_sms"
+           color="primary">   
+            <mat-label>Send SMS</mat-label>                      
+      </mat-slide-toggle>
+
+
+       <mat-form-field class="example-fullength-width">
+        <mat-label>SMS Text</mat-label>  
+        <textarea matInput formControlName="corr_sms_text" >
+        </textarea>
         <mat-error>This field is required</mat-error>
       </mat-form-field>
-      <div>
+        </mat-card-content> 
 
-      </div>  
+</mat-card>
+
+<mat-card class="example-card">
+
+  <mat-card-header>
+    <mat-card-title>Twitter Configurations</mat-card-title>
+   
+  </mat-card-header>
+    <mat-card-content>
+         <mat-slide-toggle 
+          class="example-fullength-width"         
+           formControlName="corr_twitter"
+           color="primary">   
+            <mat-label>Send Tweet</mat-label>                      
+      </mat-slide-toggle>
+
+
+       <mat-form-field class="example-fullength-width">
+        <mat-label>Tweet Text</mat-label>  
+        <textarea matInput formControlName="corr_twitter_text" >
+        </textarea>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+        </mat-card-content> 
+
+</mat-card>
+ 
         <div class="button-row center-block" style="padding-top:50px;" >
          <button mat-flat-button color="primary" style=""  matStepperPrevious> <mat-icon>arrow_left_alt</mat-icon>Back</button>
         <button mat-flat-button color="primary" style="" matStepperNext> <mat-icon>arrow_right_alt</mat-icon> Next</button>
