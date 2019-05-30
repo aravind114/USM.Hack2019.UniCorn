@@ -52,15 +52,11 @@
   <mat-step formGroupName="1" [stepControl]="formArray?.get([1])">   
       <ng-template matStepLabel>Fill out correspondace</ng-template>
 
-<mat-grid-list cols="4" rowHeight="100px">
-  <mat-grid-tile
-      *ngFor="let tile of tiles"
-      [colspan]="tile.cols"
-      [rowspan]="tile.rows"
-      [style.background]="tile.color">
-    {{tile.text}}
-  </mat-grid-tile>
-</mat-grid-list>
+<mat-grid-list cols="2" rowHeight="300px">
+  <mat-grid-tile  [colspan]="1">
+
+
+
 <mat-card class="example-card" >
 
   <mat-card-header>
@@ -77,21 +73,24 @@
   
       <mat-form-field class="example-fullength-width">
         <mat-label>Email Subject</mat-label>  
-        <textarea matInput formControlName="corr_email_subject" >
+        <textarea matInput formControlName="corr_email_subject" required>
         </textarea>
         <mat-error>This field is required</mat-error>
       </mat-form-field>
 
        <mat-form-field class="example-fullength-width">
         <mat-label>Email Text</mat-label>  
-        <textarea matInput formControlName="corr_email_text" >
+        <textarea matInput formControlName="corr_email_text" required>
         </textarea>
         <mat-error>This field is required</mat-error>
       </mat-form-field>
         </mat-card-content> 
 
 </mat-card>
+</mat-grid-tile>
 
+<mat-grid-tile [colspan]="2" [rowspan]="1">
+ 
 
 <mat-card class="example-card">
 
@@ -110,7 +109,7 @@
 
        <mat-form-field class="example-fullength-width">
         <mat-label>SMS Text</mat-label>  
-        <textarea matInput formControlName="corr_sms_text" >
+        <textarea matInput formControlName="corr_sms_text" required>
         </textarea>
         <mat-error>This field is required</mat-error>
       </mat-form-field>
@@ -135,13 +134,15 @@
 
        <mat-form-field class="example-fullength-width">
         <mat-label>Tweet Text</mat-label>  
-        <textarea matInput formControlName="corr_twitter_text" >
+        <textarea matInput formControlName="corr_twitter_text" required>
         </textarea>
         <mat-error>This field is required</mat-error>
       </mat-form-field>
         </mat-card-content> 
 
 </mat-card>
+ </mat-grid-tile>
+</mat-grid-list>
  
         <div class="button-row center-block" style="padding-top:50px;" >
          <button mat-flat-button color="primary" style=""  matStepperPrevious> <mat-icon>arrow_left_alt</mat-icon>Back</button>
