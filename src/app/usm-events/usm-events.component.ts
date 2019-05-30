@@ -10,7 +10,7 @@ import { Event } from '../event';
 export class UsmEventsComponent implements OnInit {
 
 
-  displayedColumns: string[] = ['_id', 'category','event_type','alert_type','correspondance'];
+  displayedColumns: string[] = ['_id', 'category','event_type','alert_type','correspondance','actions'];
   data: Event[] = [];
   isLoadingResults = true;
 
