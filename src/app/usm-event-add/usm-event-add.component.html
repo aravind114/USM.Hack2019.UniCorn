@@ -52,16 +52,13 @@
   <mat-step formGroupName="1" [stepControl]="formArray?.get([1])">   
       <ng-template matStepLabel>Fill out correspondace</ng-template>
 
-<mat-grid-list cols="2" rowHeight="300px">
+<mat-grid-list cols="2" rowHeight="400px">
+
+  
   <mat-grid-tile  [colspan]="1">
-
-
-
 <mat-card class="example-card" >
-
   <mat-card-header>
-    <mat-card-title>Email Configurations</mat-card-title>
-   
+    <mat-card-title>Email Configurations</mat-card-title>   
   </mat-card-header>
     <mat-card-content>
          <mat-slide-toggle 
@@ -89,14 +86,13 @@
 </mat-card>
 </mat-grid-tile>
 
-<mat-grid-tile [colspan]="2" [rowspan]="1">
+<mat-grid-tile [colspan]="1" >
  
 
 <mat-card class="example-card">
 
   <mat-card-header>
-    <mat-card-title>SMS Configurations</mat-card-title>
-   
+    <mat-card-title>SMS Configurations</mat-card-title>   
   </mat-card-header>
     <mat-card-content>
          <mat-slide-toggle 
@@ -105,7 +101,6 @@
            color="primary">   
             <mat-label>Send SMS</mat-label>                      
       </mat-slide-toggle>
-
 
        <mat-form-field class="example-fullength-width">
         <mat-label>SMS Text</mat-label>  
@@ -116,7 +111,8 @@
         </mat-card-content> 
 
 </mat-card>
-
+ </mat-grid-tile>
+<mat-grid-tile >
 <mat-card class="example-card">
 
   <mat-card-header>
