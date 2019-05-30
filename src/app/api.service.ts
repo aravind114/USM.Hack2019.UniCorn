@@ -18,9 +18,12 @@ export class ApiService {
 
   //mock event data
   usmevents: Array<Event> = [
-    { _id: '1', category: 'Insurance', event_type: 'New Application or Increase in Existing Insurance', alert_type: 'Real Time', correspondance: 'Email & SMS' },
-    { _id: '2', category: 'Investment Switch - Super', event_type: 'Application Acknowledgement', alert_type: 'Real Time', correspondance: 'Email & SMS' },
-    { _id: '3', category: 'Binding Nomination Renewal - Pension', event_type: 'Renewal - Notification', alert_type: 'Time-Based', correspondance: 'SMS' }
+    { _id: '1', category: 'Protect Your Super', event_type: 'Initial Reminder – 15 Month Notification', alert_type: 'Real Time', correspondance: 'Email & SMS' },
+    { _id: '2', category: 'Protect Your Super', event_type: 'Insurance Cancellation – 16 Month Notification', alert_type: 'Real Time', correspondance: 'Email & SMS' },
+    { _id: '3', category: 'Protect Your Super', event_type: 'PYS – Insurance Opt-In Acknowledgement', alert_type: 'Time-Based', correspondance: 'SMS' },
+       { _id: '4', category: 'Insurance', event_type: 'New Application or Increase in Existing Insurance', alert_type: 'Real Time', correspondance: 'Email & SMS' },
+    { _id: '5', category: 'Investment Switch - Super', event_type: 'Application Acknowledgement', alert_type: 'Real Time', correspondance: 'Email & SMS' },
+    { _id: '6', category: 'Binding Nomination Renewal - Pension', event_type: 'Renewal - Notification', alert_type: 'Time-Based', correspondance: 'SMS' }
   ];
 
   constructor(private http: HttpClient) { }
